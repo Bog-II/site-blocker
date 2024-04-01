@@ -1,0 +1,7 @@
+# Node modules
+/node_modules/
+
+# Vite
+/dist/
+/.vite/
+/vite.config.ts
