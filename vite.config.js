@@ -10,7 +10,7 @@ export default defineConfig({
         main: "./src/main.js",
         blockedSites: "./src/blockedSites.js",
         blockedQueries: "./src/blockedQueries.js",
-        background: "./src/background.js",
+        background: "./src/background.ts",
       },
       output: {
         entryFileNames: "[name].js",

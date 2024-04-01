@@ -4,12 +4,12 @@
   "version": "1.0",
   "description": "Blocks specified websites with Svelte and Vite.",
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
-    "<all_urls>",
-    "tabs",
-    "storage"
+    "storage",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "tabs"
   ],
+  "host_permissions": ["*://*/*"],
   "background": {
     "service_worker": "background.js"
   },

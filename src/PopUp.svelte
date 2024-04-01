@@ -21,10 +21,11 @@
   }
 
   function handleSaveButtonClick() {
-    textareaContent.subscribe((content) => {
+    textareaContent.subscribe(async (content) => {
       const data = {};
       data[chrome_storage_id] = content;
-      chrome.storage.local.set(data);
+      await chrome.storage.local.set(data);
+      window.close()
     });
   }
 </script>
