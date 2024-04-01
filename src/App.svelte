@@ -1,18 +1,38 @@
 <script>
-  import Dialog from "./Dialog.svelte";
-  let showDialog = false;
+  function openCenteredWindow(url, width, height) {
+    // Calculate the position for the new window to be centered
+    const left = Math.round(window.screen.width / 2 - width / 2);
+    const top = Math.round(window.screen.height / 2 - height / 2);
 
-  function toggleDialog() {
-    showDialog = !showDialog;
+    chrome.windows.create({
+      url: url,
+      type: "popup",
+      width: width,
+      height: height,
+      left: left,
+      top: top,
+    });
+  }
+
+  function showBlockeddSites() {
+    openCenteredWindow("blockedSites.html", 500, 500);
+  }
+
+  function showBlockedQueries() {
+    openCenteredWindow("blockedQueries.html", 500, 500);
   }
 </script>
 
-<!-- Button to toggle the dialog -->
-<button on:click={toggleDialog}>Open Dialog</button>
+<div id="menu">
+  <button on:click={showBlockeddSites}>Websites</button>
+  <button on:click={showBlockedQueries}>Queries</button>
+</div>
 
-<!-- Dialog component -->
-<Dialog bind:show={showDialog} on:close={toggleDialog}>
-  <h2>Dialog Title</h2>
-  <p>This is a dialog.</p>
-  <!-- The rest of your dialog content goes here -->
-</Dialog>
+<style>
+  div#menu {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    width: 100px;
+  }
+</style>

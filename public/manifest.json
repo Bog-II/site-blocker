@@ -3,7 +3,13 @@
   "name": "Website Blocker",
   "version": "1.0",
   "description": "Blocks specified websites with Svelte and Vite.",
-  "permissions": ["webRequest", "webRequestBlocking", "<all_urls>"],
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "tabs",
+    "storage"
+  ],
   "background": {
     "service_worker": "background.js"
   },

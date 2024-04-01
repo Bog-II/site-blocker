@@ -8,6 +8,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "./src/main.js",
+        blockedSites: "./src/blockedSites.js",
+        blockedQueries: "./src/blockedQueries.js",
         background: "./src/background.js",
       },
       output: {
