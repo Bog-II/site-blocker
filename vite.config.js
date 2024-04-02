@@ -20,3 +20,5 @@ export default defineConfig({
     },
   },
 });
+
+// web-ext run --source-dir ./dist/ --target=chromium

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   function openCenteredWindow(url, width, height) {
     // Calculate the position for the new window to be centered
     const left = Math.round(window.screen.width / 2 - width / 2);
