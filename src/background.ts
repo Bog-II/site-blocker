@@ -1,7 +1,6 @@
 const SITES_CHROME_STORAGE_ID = "sites_chrome_storage_id";
 
 const getForbiddenDomains = async (): Promise<string[]> => {
-  console.log("getForbiddenUrls");
   return new Promise((resolve, reject) => {
     chrome.storage.local.get(SITES_CHROME_STORAGE_ID, function (result) {
       if (chrome.runtime.lastError) {
@@ -19,8 +18,6 @@ const getForbiddenDomains = async (): Promise<string[]> => {
 
 const setupBlockingRules = async () => {
   const forbidden_domains = await getForbiddenDomains();
-  console.log("forbidden_domains", forbidden_domains);
-
   const rules = await chrome.declarativeNetRequest.getDynamicRules();
   const ruleIdsToRemove = rules.map((rule) => rule.id);
 
