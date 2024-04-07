@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Website Blocker",
+  "version": "1.0",
+  "description": "Blocks specified websites with Svelte and Vite.",
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "tabs"
+  ],
+  "host_permissions": ["*://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "128": "assets/icons/extension_icon_128x128.png",
+      "16": "assets/icons/extension_icon_16x16.png"
+    },
+
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "128": "assets/icons/extension_icon_128x128.png",
+    "16": "assets/icons/extension_icon_16x16.png"
+  }
+}
