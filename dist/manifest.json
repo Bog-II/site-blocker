@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Website Blocker",
+  "name": "Domains and Queries blocker",
   "version": "1.0",
-  "description": "Blocks specified websites with Svelte and Vite.",
+  "description": "Blocks specified domains and Google search queries.",
   "permissions": [
     "storage",
     "declarativeNetRequest",

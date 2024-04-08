@@ -8,7 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "./src/main.ts",
-        blockedSites: "./src/blockedSites.ts",
+        blockedDomains: "./src/blockedDomains.ts",
         blockedQueries: "./src/blockedQueries.ts",
         background: "./src/background.ts",
       },
@@ -20,7 +20,7 @@ export default defineConfig({
     },
   },
   define: {
-    __SITES_CHROME_STORAGE_ID__: '"sites_chrome_storage_id"',
+    __DOMAINS_CHROME_STORAGE_ID__: '"domains_chrome_storage_id"',
     __QUERIES_CHROME_STORAGE_ID__: '"queries_chrome_storage_id"',
   },
 });

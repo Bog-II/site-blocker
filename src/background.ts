@@ -1,12 +1,12 @@
 const getForbiddenDomains = async (): Promise<string[]> => {
   return new Promise((resolve, reject) => {
-    chrome.storage.local.get(__SITES_CHROME_STORAGE_ID__, function (result) {
+    chrome.storage.local.get(__DOMAINS_CHROME_STORAGE_ID__, function (result) {
       if (chrome.runtime.lastError) {
         reject(chrome.runtime.lastError);
       } else {
         // Make sure we have a string before calling split
-        const urls = result[__SITES_CHROME_STORAGE_ID__]
-          ? result[__SITES_CHROME_STORAGE_ID__].toLowerCase().split("\n")
+        const urls = result[__DOMAINS_CHROME_STORAGE_ID__]
+          ? result[__DOMAINS_CHROME_STORAGE_ID__].toLowerCase().split("\n")
           : [];
         resolve(urls);
       }

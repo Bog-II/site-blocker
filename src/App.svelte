@@ -24,7 +24,7 @@
 </script>
 
 <div id="menu">
-  <button on:click={showBlockeddSites}>Websites</button>
+  <button on:click={showBlockeddSites}>Domains</button>
   <button on:click={showBlockedQueries}>Queries</button>
 </div>
 
