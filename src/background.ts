@@ -1,15 +1,12 @@
-const SITES_CHROME_STORAGE_ID = "sites_chrome_storage_id";
-const QUERIES_CHROME_STORAGE_ID = "queries_chrome_storage_id";
-
 const getForbiddenDomains = async (): Promise<string[]> => {
   return new Promise((resolve, reject) => {
-    chrome.storage.local.get(SITES_CHROME_STORAGE_ID, function (result) {
+    chrome.storage.local.get(__SITES_CHROME_STORAGE_ID__, function (result) {
       if (chrome.runtime.lastError) {
         reject(chrome.runtime.lastError);
       } else {
         // Make sure we have a string before calling split
-        const urls = result[SITES_CHROME_STORAGE_ID]
-          ? result[SITES_CHROME_STORAGE_ID].toLowerCase().split("\n")
+        const urls = result[__SITES_CHROME_STORAGE_ID__]
+          ? result[__SITES_CHROME_STORAGE_ID__].toLowerCase().split("\n")
           : [];
         resolve(urls);
       }
@@ -19,14 +16,14 @@ const getForbiddenDomains = async (): Promise<string[]> => {
 
 const getForbiddenQueries = async (): Promise<Set<string>> => {
   return new Promise((resolve, reject) => {
-    chrome.storage.local.get(QUERIES_CHROME_STORAGE_ID, function (result) {
+    chrome.storage.local.get(__QUERIES_CHROME_STORAGE_ID__, function (result) {
       if (chrome.runtime.lastError) {
         reject(chrome.runtime.lastError);
       } else {
         // Make sure we have a string before calling split
         const queries: Set<string> = new Set(
-          result[QUERIES_CHROME_STORAGE_ID]
-            ? result[QUERIES_CHROME_STORAGE_ID].toLowerCase().split("\n")
+          result[__QUERIES_CHROME_STORAGE_ID__]
+            ? result[__QUERIES_CHROME_STORAGE_ID__].toLowerCase().split("\n")
             : []
         );
         resolve(queries);

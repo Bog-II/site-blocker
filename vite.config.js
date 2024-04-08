@@ -7,9 +7,9 @@ export default defineConfig({
     outDir: "dist",
     rollupOptions: {
       input: {
-        main: "./src/main.js",
-        blockedSites: "./src/blockedSites.js",
-        blockedQueries: "./src/blockedQueries.js",
+        main: "./src/main.ts",
+        blockedSites: "./src/blockedSites.ts",
+        blockedQueries: "./src/blockedQueries.ts",
         background: "./src/background.ts",
       },
       output: {
@@ -18,6 +18,10 @@ export default defineConfig({
         assetFileNames: "[name].[ext]",
       },
     },
+  },
+  define: {
+    __SITES_CHROME_STORAGE_ID__: '"sites_chrome_storage_id"',
+    __QUERIES_CHROME_STORAGE_ID__: '"queries_chrome_storage_id"',
   },
 });
 

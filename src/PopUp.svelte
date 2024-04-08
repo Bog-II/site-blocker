@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { writable } from "svelte/store";
 
   export let title = "";
   export let chrome_storage_id = "";
