@@ -15,7 +15,7 @@
   }
 
   function showBlockeddSites() {
-    openCenteredWindow("blockedSites.html", 500, 500);
+    openCenteredWindow("blockedDomains.html", 500, 500);
   }
 
   function showBlockedQueries() {
