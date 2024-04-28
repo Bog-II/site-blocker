@@ -71,7 +71,7 @@ const main = () => {
 
         // Redirect by updating the tab's URL to Google's search
         chrome.tabs.update(tabId, { url: newUrl });
-      } else if (tab.url.includes("google.com/search")) {
+      } else if (tab.url.includes("www.google.com/search")) {
         getForbiddenQueries().then((forbiddenQueries) => {
           const url = new URL(tab.url || "");
           const urlParams = new URLSearchParams(url.search);
